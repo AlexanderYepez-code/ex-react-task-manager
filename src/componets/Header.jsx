@@ -19,9 +19,9 @@ export default function Header() {
     ]
     return (
         <>
-            <div className="container mx-auto">
-                <header className=' flex gap-5 bg-gray-900 text-white'>
-                    <h1>Task Manager</h1>
+            <div className="container mx-auto ">
+                <header className=' flex gap-5 bg-gray-900 text-white text-lg items-center'>
+                    <h1 className="px-1">Task Manager</h1>
                     <div>
                         {menu.map(m => {
                             return (

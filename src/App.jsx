@@ -5,20 +5,25 @@ import './App.css'
 import Layout from './layout/Layout'
 import AddTask from './Pages/AddTask'
 import TaskList from './Pages/TaskList'
+import { GlobalProvider } from './Context/GlobalContest'
 
 function App() {
 
 
   return (
     <BrowserRouter>
-      <Layout>
-        <Routes>
-          <Route path='/' element={<HomePage />} />
-          <Route path='/addTask' element={<AddTask/>}/>
-          <Route path='/tasklist' element={<TaskList/>}/>
-        </Routes>
+      <GlobalProvider>
+        <Layout>
 
-      </Layout>
+          <Routes>
+            <Route path='/' element={<HomePage />} />
+            <Route path='/addTask' element={<AddTask />} />
+            <Route path='/tasklist' element={<TaskList />} />
+          </Routes>
+
+        </Layout>
+      </GlobalProvider>
+
 
 
     </BrowserRouter>

@@ -11,4 +11,15 @@ export default function useTask (){
 
         .catch((error)=> console.error(error))
     },[]);
+
+    function addTask (){
+
+    }
+    function removeTask (){
+
+    }
+    function updateTask(){
+
+    }
+    return {tasks, addTask, removeTask, updateTask}
 }

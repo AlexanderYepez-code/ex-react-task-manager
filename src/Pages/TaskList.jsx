@@ -4,6 +4,7 @@ import TaskRow from "../componets/TaskRow";
 
 export default function TaskList() {
     const { tasks } = useContext(GlobalContext)
+    console.log(tasks)
 
 
 

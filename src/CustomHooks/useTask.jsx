@@ -1,25 +1,44 @@
 import { useEffect, useState } from "react";
 
-export default function useTask (){
+export default function useTask() {
     const [tasks, setTask] = useState([]);
     const url = import.meta.env.VITE_API_URL;
 
-    useEffect(()=>{
+    useEffect(() => {
         fetch(`${url}/tasks`)
-        .then((res)=> res.json())
-        .then((data)=> setTask(data))
+            .then((res) => res.json())
+            .then((data) => setTask(data))
 
-        .catch((error)=> console.error(error))
-    },[]);
+            .catch((error) => console.error(error))
+    }, []);
 
-    function addTask (){
+    function addTask(obj) {
+
+        fetch(`${url}/tasks`, {
+            method: "POST",
+            body: JSON.stringify(obj),
+            headers: {
+                "content-type": "application/json; charset=UTF-8"
+            }
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                if(data.success){
+                    setTask((prev) => [...prev, data.task])
+                }else{
+                    throw new Error(data.message)
+                }
+    })
+
+            .catch((error) => console.error(error))
+
 
     }
-    function removeTask (){
+    function removeTask() {
 
     }
-    function updateTask(){
+    function updateTask() {
 
     }
-    return {tasks, addTask, removeTask, updateTask}
+    return { tasks, addTask, removeTask, updateTask }
 }

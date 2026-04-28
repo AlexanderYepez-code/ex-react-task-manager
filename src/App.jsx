@@ -5,6 +5,7 @@ import './App.css'
 import Layout from './layout/Layout'
 import AddTask from './Pages/AddTask'
 import TaskList from './Pages/TaskList'
+import TaskDaetail from './Pages/TaskDetail'
 import { GlobalProvider } from './Context/GlobalContest'
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
             <Route path='/' element={<HomePage />} />
             <Route path='/addTask' element={<AddTask />} />
             <Route path='/tasklist' element={<TaskList />} />
+            <Route path="/tasks/:id" element={<TaskDaetail />} />
           </Routes>
 
         </Layout>

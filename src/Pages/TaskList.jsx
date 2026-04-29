@@ -33,6 +33,7 @@ export default function TaskList() {
                             {tasks.map(t => {
                                 return (
                                     <TaskRow key={t.id}
+                                        id={t.id}
                                         title={t.title}
                                         status={t.status}
                                         createdAt={t.createdAt} />

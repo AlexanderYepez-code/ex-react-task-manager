@@ -1,7 +1,7 @@
 import { memo } from "react"
 import { Link } from "react-router-dom";
 
- function TaskRow({ title, status, createdAt }) {
+ function TaskRow({id, title, status, createdAt }) {
     const statusColor = {
         "To do": "bg-red-500",
         "Doing": "bg-yellow-500",
@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
         <>
             <tr className="hover:bg-gray-50 dark:hover:bg-gray-700 transition">
                 <td className="px-4 py-3 text-sm text-gray-800 dark:text-gray-500">
-                    <Link to= "/task/${id}">{title}</Link>
+                    <Link to={`/task/${id}`}>{title}</Link>
                     
                 </td>
                 <td className={`px-4 py-3 text-sm text-gray-800 dark:text-gray-500 ${statusColor[status]}`}

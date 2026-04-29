@@ -1,16 +1,67 @@
-# React + Vite
+# Advanced Task Manager
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## English
 
-Currently, two official plugins are available:
+This project is an **Advanced Task Manager** developed as the final project of the React module.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+The goal of this application is to demonstrate the main concepts learned during the React course, including component-based architecture, state management, props, events, conditional rendering, lists, and user interaction.
 
-## React Compiler
+The application allows users to manage their tasks in a clear and organized way. Users can add new tasks, mark tasks as completed, delete tasks, and keep track of their progress.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+This project represents the conclusion of the React module because it combines several important React features into a single practical application.
 
-## Expanding the ESLint configuration
+## Main Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Add new tasks
+- Display a list of tasks
+- Mark tasks as completed
+- Delete tasks
+- Organize and manage daily activities
+- Practice React components and state management
+
+## Technologies Used
+
+- React
+- Vite
+- JavaScript
+- HTML
+- CSS
+
+## Conclusion
+
+This Advanced Task Manager is a practical project created to apply and reinforce the knowledge gained during the React module. It shows how React can be used to build dynamic, interactive, and well-structured web applications.
+
+---
+
+# Task Manager Avanzato
+
+## Italiano
+
+Questo progetto è un **Task Manager Avanzato** sviluppato come progetto conclusivo del modulo di React.
+
+L’obiettivo dell’applicazione è dimostrare i principali concetti studiati durante il corso, tra cui la struttura a componenti, la gestione dello stato, l’utilizzo delle props, gli eventi, il rendering condizionale, le liste e l’interazione con l’utente.
+
+L’applicazione permette agli utenti di gestire le proprie attività in modo semplice e organizzato. È possibile aggiungere nuove task, segnare le attività come completate, eliminarle e monitorare l’avanzamento del lavoro.
+
+Questo progetto rappresenta la conclusione del modulo di React perché unisce diverse funzionalità fondamentali in un’unica applicazione pratica.
+
+## Funzionalità principali
+
+- Aggiunta di nuove task
+- Visualizzazione della lista delle attività
+- Segnalazione delle task completate
+- Eliminazione delle task
+- Organizzazione delle attività quotidiane
+- Utilizzo pratico di componenti e stato in React
+
+## Tecnologie utilizzate
+
+- React
+- Vite
+- JavaScript
+- HTML
+- CSS
+
+## Conclusione
+
+Il Task Manager Avanzato è un progetto pratico realizzato per applicare e consolidare le competenze acquisite durante il modulo di React. Dimostra come React possa essere utilizzato per creare applicazioni web dinamiche, interattive e ben strutturate.

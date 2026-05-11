@@ -1,12 +1,12 @@
 import { memo } from "react"
 import { Link } from "react-router-dom";
 
+const statusColor = {
+    "To do": "bg-red-500",
+    "Doing": "bg-yellow-500",
+    "Done": "bg-green-500"
+}
  function TaskRow({id, title, status, createdAt }) {
-    const statusColor = {
-        "To do": "bg-red-500",
-        "Doing": "bg-yellow-500",
-        "Done": "bg-green-500"
-    }
     const formattedDate = new Date(createdAt).toLocaleDateString("it-IT");
     return (
         <>

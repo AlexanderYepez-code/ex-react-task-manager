@@ -5,40 +5,84 @@ export default function useTask() {
     const url = import.meta.env.VITE_API_URL;
 
     useEffect(() => {
-        fetch(`${url}/tasks`)
-            .then((res) => res.json())
-            .then((data) => setTask(data))
+        async function fetchTasks() {
+            try {
+                const res = await fetch(`${url}/tasks`);
+                const data = await res.json();
 
-            .catch((error) => console.error(error))
-    }, []);
-
-    function addTask(obj) {
-
-        fetch(`${url}/tasks`, {
-            method: "POST",
-            body: JSON.stringify(obj),
-            headers: {
-                "content-type": "application/json; charset=UTF-8"
+                setTask(data);
+            } catch (error) {
+                console.error(error);
             }
-        })
-            .then((res) => res.json())
-            .then((data) => {
-                if(data.success){
-                    setTask((prev) => [...prev, data.task])
-                }else{
-                    throw new Error(data.message)
-                }
-    })
+        }
 
-            .catch((error) => console.error(error))
+        fetchTasks();
+    }, [url]);
 
+    async function addTask(obj) {
+        try {
+            const res = await fetch(`${url}/tasks`, {
+                method: "POST",
+                body: JSON.stringify(obj),
+                headers: {
+                    "Content-Type": "application/json; charset=UTF-8",
+                },
+            });
 
+            const data = await res.json();
+
+            if (data.success) {
+                setTask((prev) => [...prev, data.task]);
+            } else {
+                throw new Error(data.message);
+            }
+        } catch (error) {
+            console.error(error);
+        }
     }
-    function removeTask() {
 
-    }
-    function updateTask() {
+    async function removeTask(id) {
+        try {
+            const res = await fetch(`${url}/tasks/${id}`, {
+                method: "DELETE",
+            });
 
+            const data = await res.json();
+
+            if (res.ok || data.success) {
+                setTask((prev) => prev.filter((t) => t.id !== id));
+            } else {
+                throw new Error(data.message);
+            }
+        } catch (error) {
+            console.error(error);
+        }
     }
-    return { tasks, addTask, removeTask, updateTask }
+
+    async function updateTask(id, taskModified) {
+        try {
+            const res = await fetch(`${url}/tasks/${id}`, {
+                method: "PUT",
+                body: JSON.stringify(taskModified),
+                headers: {
+                    "Content-Type": "application/json; charset=UTF-8",
+                },
+            });
+            const data = await res.json();
+
+            if (res.ok || data.success) {
+                setTask((prev) =>
+                    prev.map((t) => (t.id === id ? { ...t, ...taskModified } : t))
+                );
+            } else {
+                throw new Error(data.message);
+            }
+        } catch (error) {
+            console.error(error);
+
+        }
+
+        
+    }
+return { tasks, addTask, removeTask, updateTask };
 }
